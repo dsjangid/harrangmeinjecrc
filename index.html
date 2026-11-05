@@ -209,31 +209,6 @@
       object-fit: contain;
     }
 
-    /* Live Card Badge with SVG Glowing Diya */
-    .diya-badge {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      background: rgba(2, 20, 14, 0.88);
-      border: 1px solid var(--gold-primary);
-      color: #ffeaa7;
-      font-size: 11px;
-      font-weight: 600;
-      padding: 4px 10px;
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-      z-index: 11;
-    }
-
-    .diya-badge svg {
-      width: 16px;
-      height: 16px;
-    }
-
     .flame-anim {
       transform-origin: 50% 80%;
       animation: flickerFlame 1.3s ease-in-out infinite alternate;
@@ -618,18 +593,6 @@
       </svg>
 
       <div class="preview-container">
-        <div class="diya-badge">
-          <!-- Animated Vector Diya -->
-          <svg viewBox="0 0 24 24" fill="none">
-            <g class="flame-anim">
-              <path d="M12 2C12 2 9 6.5 9 10C9 11.8 10.3 13 12 13C13.7 13 15 11.8 15 10C15 6.5 12 2 12 2Z" fill="#ffc233"/>
-              <ellipse cx="12" cy="9.5" rx="1.2" ry="2" fill="#ffffff" opacity="0.85"/>
-            </g>
-            <path d="M4 12.5C4 12.5 5.5 19 12 19C18.5 19 20 12.5 20 12.5C20 12.5 16.5 14.5 12 14.5C7.5 14.5 4 12.5 4 12.5Z" fill="#d48b0a"/>
-          </svg>
-          Live Card
-        </div>
-
         <div class="loading-state" id="loadingState">
           <div class="spinner"></div>
           <p style="font-size: 13px; color: #ffeaa7;">Illuminating Card Template...</p>
