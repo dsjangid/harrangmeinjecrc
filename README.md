@@ -82,7 +82,7 @@ Simply enter your Name and Department/Designation, and click "Download High-Res 
 Wishing you and your family a very Happy and Prosperous Diwali!
 
 Warm regards,
-Jaipur Engineering College & Research Centre (JECRC)
+JECRC
 ```
 
 ---
