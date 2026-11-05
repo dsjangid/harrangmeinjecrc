@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>🪔 #HarRangMeinJECRC | Shubh Deepawali</title>
+  <title>#HarRangMeinJECRC | Shubh Deepawali</title>
 
-  <!-- Google Fonts: Montserrat & Great Vibes for Festive Diwali Accents -->
+  <!-- Google Fonts: Montserrat & Playfair Display -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -22,10 +22,11 @@
     :root {
       --gold-primary: #ffc233;
       --gold-deep: #d48b0a;
+      --gold-light: #ffeaa7;
       --gold-glow: rgba(255, 194, 51, 0.45);
-      --diwali-red: #c92a2a;
+      --diwali-clay: #c44512;
       --emerald-dark: #02150f;
-      --emerald-surface: rgba(7, 33, 23, 0.88);
+      --emerald-surface: rgba(7, 33, 23, 0.92);
     }
 
     body {
@@ -41,38 +42,37 @@
       overflow-x: hidden;
     }
 
-    /* Ambient Festive Lights (Toran & Diya Glows) */
-    .diya-glow-left {
-      position: fixed;
-      top: -50px;
-      left: -80px;
-      width: 220px;
-      height: 220px;
-      background: radial-gradient(circle, rgba(255, 180, 0, 0.25) 0%, transparent 70%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
+    /* Ambient Festive Starlight & Floating Golden Dust */
     .diwali-sparkle-bg {
       position: fixed;
       inset: 0;
       background-image: 
-        radial-gradient(2px 2px at 20px 30px, #ffd778, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 90px 140px, #ffb347, rgba(0,0,0,0)),
-        radial-gradient(1.5px 1.5px at 160px 70px, #ffe699, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 260px 210px, #ffc83b, rgba(0,0,0,0)),
-        radial-gradient(1.5px 1.5px at 320px 110px, #ffd778, rgba(0,0,0,0));
+        radial-gradient(1.5px 1.5px at 30px 40px, #ffd778, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 110px 160px, #ffb347, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 190px 90px, #ffe699, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 280px 240px, #ffc83b, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 340px 130px, #ffd778, rgba(0,0,0,0));
       background-repeat: repeat;
-      background-size: 350px 350px;
+      background-size: 360px 360px;
       opacity: 0.35;
       pointer-events: none;
       z-index: 0;
-      animation: floatSparkles 20s linear infinite;
+      animation: floatSparkles 24s linear infinite;
     }
 
     @keyframes floatSparkles {
       from { transform: translateY(0); }
-      to { transform: translateY(-350px); }
+      to { transform: translateY(-360px); }
+    }
+
+    .ambient-glow {
+      position: fixed;
+      top: -60px;
+      width: 400px;
+      height: 250px;
+      background: radial-gradient(ellipse, rgba(255, 180, 0, 0.22) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
     }
 
     .app-card {
@@ -85,19 +85,23 @@
       z-index: 2;
     }
 
-    /* Traditional Toran Garland at Top */
-    .toran-garland {
+    /* Traditional Toran Vector Garland at Top */
+    .toran-container {
+      width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 8px;
-      font-size: 16px;
-      opacity: 0.9;
       margin-bottom: 2px;
-      filter: drop-shadow(0 2px 8px rgba(255, 194, 51, 0.6));
+      filter: drop-shadow(0 3px 6px rgba(0,0,0,0.5));
     }
 
-    /* Festive Header */
+    .toran-svg {
+      width: 100%;
+      max-width: 380px;
+      height: 38px;
+    }
+
+    /* Header Styling */
     header {
       text-align: center;
       position: relative;
@@ -106,18 +110,23 @@
     .shubh-tag {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      background: linear-gradient(90deg, rgba(212, 139, 10, 0.15), rgba(255, 194, 51, 0.25), rgba(212, 139, 10, 0.15));
+      gap: 8px;
+      background: linear-gradient(90deg, rgba(212, 139, 10, 0.15), rgba(255, 194, 51, 0.28), rgba(212, 139, 10, 0.15));
       border: 1px solid var(--gold-primary);
-      color: #ffe699;
+      color: #ffeaa7;
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: 1.2px;
-      padding: 5px 14px;
+      letter-spacing: 1.5px;
+      padding: 5px 16px;
       border-radius: 999px;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       text-transform: uppercase;
-      box-shadow: 0 0 16px rgba(255, 194, 51, 0.3);
+      box-shadow: 0 0 16px rgba(255, 194, 51, 0.25);
+    }
+
+    .tag-diya {
+      width: 14px;
+      height: 14px;
     }
 
     h1 {
@@ -130,35 +139,65 @@
     }
 
     h1 span {
-      background: linear-gradient(135deg, #ffe28a 0%, #ffc233 50%, #f39c12 100%);
+      background: linear-gradient(135deg, #ffeaa7 0%, #ffc233 50%, #f39c12 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      filter: drop-shadow(0 2px 8px rgba(255, 194, 51, 0.5));
+      filter: drop-shadow(0 2px 8px rgba(255, 194, 51, 0.4));
+    }
+
+    /* Ornate Rangoli Divider */
+    .rangoli-divider {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 4px 0 6px;
+      opacity: 0.85;
+    }
+
+    .rangoli-svg {
+      width: 220px;
+      height: 18px;
     }
 
     p.festive-sub {
       font-size: 12px;
-      color: #d1ded7;
-      margin-top: 4px;
-      line-height: 1.4;
+      color: #c9dbd3;
+      margin-top: 2px;
+      line-height: 1.45;
     }
 
-    /* Card Frame with Ornate Golden Border & Corner Diya */
+    /* Ornate Card Frame with Rajasthani Corner Flourishes */
     .card-frame {
       position: relative;
       width: 100%;
       aspect-ratio: 1 / 1;
-      border-radius: 18px;
+      border-radius: 20px;
       padding: 3px;
       background: linear-gradient(135deg, #ffd778 0%, #b87c0a 50%, #ffeaa7 100%);
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7), 0 0 25px rgba(255, 194, 51, 0.25);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7), 0 0 25px rgba(255, 194, 51, 0.22);
     }
+
+    /* Corner Arch Flourishes */
+    .corner-flourish {
+      position: absolute;
+      width: 26px;
+      height: 26px;
+      pointer-events: none;
+      z-index: 10;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6));
+    }
+
+    .corner-tl { top: 6px; left: 6px; }
+    .corner-tr { top: 6px; right: 6px; transform: scaleX(-1); }
+    .corner-bl { bottom: 6px; left: 6px; transform: scaleY(-1); }
+    .corner-br { bottom: 6px; right: 6px; transform: scale(-1); }
 
     .preview-container {
       position: relative;
       width: 100%;
       height: 100%;
-      border-radius: 15px;
+      border-radius: 17px;
       overflow: hidden;
       background: #020906;
     }
@@ -170,33 +209,39 @@
       object-fit: contain;
     }
 
-    /* Diya badge */
+    /* Live Card Badge with SVG Glowing Diya */
     .diya-badge {
       position: absolute;
       top: 12px;
       right: 12px;
-      background: rgba(3, 23, 16, 0.85);
+      background: rgba(2, 20, 14, 0.88);
       border: 1px solid var(--gold-primary);
-      color: #ffe699;
+      color: #ffeaa7;
       font-size: 11px;
       font-weight: 600;
-      padding: 3px 9px;
+      padding: 4px 10px;
       border-radius: 20px;
       display: flex;
       align-items: center;
-      gap: 5px;
-      backdrop-filter: blur(6px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      gap: 6px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      z-index: 11;
     }
 
-    .flame-flicker {
-      display: inline-block;
-      animation: flicker 1.4s ease-in-out infinite alternate;
+    .diya-badge svg {
+      width: 16px;
+      height: 16px;
     }
 
-    @keyframes flicker {
-      0% { transform: scale(1) rotate(-2deg); opacity: 0.9; }
-      100% { transform: scale(1.18) rotate(3deg); opacity: 1; filter: drop-shadow(0 0 6px #ffb300); }
+    .flame-anim {
+      transform-origin: 50% 80%;
+      animation: flickerFlame 1.3s ease-in-out infinite alternate;
+    }
+
+    @keyframes flickerFlame {
+      0% { transform: scale(1) rotate(-1.5deg); filter: drop-shadow(0 0 3px #ffb300); }
+      100% { transform: scale(1.15) rotate(2deg); filter: drop-shadow(0 0 7px #ff8c00); }
     }
 
     .loading-state {
@@ -229,8 +274,8 @@
     /* Festive Form Box */
     .festive-form {
       background: var(--emerald-surface);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
       border: 1.5px solid rgba(255, 194, 51, 0.35);
       border-radius: 18px;
       padding: 18px 16px;
@@ -249,12 +294,18 @@
     .input-field label {
       font-size: 11px;
       font-weight: 700;
-      color: #ffe699;
+      color: #ffeaa7;
       text-transform: uppercase;
       letter-spacing: 0.8px;
       display: flex;
       align-items: center;
       gap: 6px;
+    }
+
+    .label-icon {
+      width: 14px;
+      height: 14px;
+      fill: var(--gold-primary);
     }
 
     .input-field input {
@@ -289,7 +340,7 @@
       border: none;
       border-radius: 14px;
       padding: 16px 20px;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 800;
       font-family: 'Montserrat', sans-serif;
       cursor: pointer;
@@ -302,6 +353,11 @@
       transition: all 0.15s ease;
       position: relative;
       overflow: hidden;
+    }
+
+    .festive-btn svg {
+      width: 20px;
+      height: 20px;
     }
 
     .festive-btn:after {
@@ -330,21 +386,26 @@
       cursor: not-allowed;
     }
 
-    /* Floating Diya Bottom Accents */
-    .diya-row {
+    /* Decorative Traditional Diyas Row at Bottom */
+    .diya-shelf {
       display: flex;
       justify-content: center;
-      gap: 16px;
-      margin-top: 6px;
-      font-size: 20px;
-      filter: drop-shadow(0 2px 6px rgba(255, 194, 51, 0.5));
+      align-items: center;
+      gap: 24px;
+      margin-top: 8px;
+    }
+
+    .shelf-diya {
+      width: 44px;
+      height: 34px;
+      filter: drop-shadow(0 4px 8px rgba(255, 194, 51, 0.45));
     }
 
     footer {
       text-align: center;
       font-size: 11px;
       color: #8daea1;
-      margin-top: 8px;
+      margin-top: 10px;
     }
 
     footer span {
@@ -399,7 +460,7 @@
 
     .modal-card h3 {
       font-size: 18px;
-      color: #ffe699;
+      color: #ffeaa7;
       font-family: 'Playfair Display', serif;
     }
 
@@ -427,6 +488,10 @@
       font-weight: 700;
       cursor: pointer;
       font-family: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
     }
 
     .btn-close {
@@ -441,7 +506,7 @@
       font-family: inherit;
     }
 
-    /* Confetti Canvas for Festive Celebration */
+    /* Confetti Canvas for Festive Sparklers */
     #confettiCanvas {
       position: fixed;
       inset: 0;
@@ -452,85 +517,235 @@
 </head>
 <body>
 
-  <!-- Festive Ambient Backdrops -->
+  <!-- Ambient Festive Background Elements -->
   <div class="diwali-sparkle-bg"></div>
-  <div class="diya-glow-left"></div>
+  <div class="ambient-glow"></div>
   <canvas id="confettiCanvas"></canvas>
 
   <div class="app-card">
-    <div class="toran-garland">
-      ✨ 🪔 ✨ 🪔 ✨
+    
+    <!-- Traditional Marigold & Mango Leaf Toran Vector Garland -->
+    <div class="toran-container">
+      <svg class="toran-svg" viewBox="0 0 380 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Main Hanging Thread -->
+        <path d="M0 6 Q95 18 190 6 Q285 18 380 6" stroke="#ffc233" stroke-width="1.8" stroke-dasharray="2 2" fill="none"/>
+        
+        <!-- Marigold Flowers & Mango Leaves Pattern -->
+        <!-- Center Blossom (190, 16) -->
+        <circle cx="190" cy="18" r="9" fill="#ff9900"/>
+        <circle cx="190" cy="18" r="6" fill="#ffcc00"/>
+        <circle cx="190" cy="18" r="2.5" fill="#7a2503"/>
+        <path d="M185 24 Q190 34 195 24 Z" fill="#2d6a4f"/>
+
+        <!-- Left Blossom 1 (95, 17) -->
+        <circle cx="95" cy="17" r="8" fill="#ff9900"/>
+        <circle cx="95" cy="17" r="5" fill="#ffcc00"/>
+        <circle cx="95" cy="17" r="2" fill="#7a2503"/>
+        <path d="M91 22 Q95 31 99 22 Z" fill="#2d6a4f"/>
+
+        <!-- Right Blossom 1 (285, 17) -->
+        <circle cx="285" cy="17" r="8" fill="#ff9900"/>
+        <circle cx="285" cy="17" r="5" fill="#ffcc00"/>
+        <circle cx="285" cy="17" r="2" fill="#7a2503"/>
+        <path d="M281 22 Q285 31 289 22 Z" fill="#2d6a4f"/>
+
+        <!-- Intermediate Mango Leaves -->
+        <path d="M48 11 Q52 26 48 29 Q44 26 48 11 Z" fill="#1b4332"/>
+        <path d="M142 12 Q146 27 142 30 Q138 27 142 12 Z" fill="#1b4332"/>
+        <path d="M238 12 Q242 27 238 30 Q234 27 238 12 Z" fill="#1b4332"/>
+        <path d="M332 11 Q336 26 332 29 Q328 26 332 11 Z" fill="#1b4332"/>
+
+        <!-- Hanging Gold Bell/Bead Droplets -->
+        <circle cx="190" cy="35" r="1.8" fill="#ffc233"/>
+        <circle cx="95" cy="32" r="1.8" fill="#ffc233"/>
+        <circle cx="285" cy="32" r="1.8" fill="#ffc233"/>
+      </svg>
     </div>
 
     <header>
       <div class="shubh-tag">
-        <span>🪔</span> Shubh Deepawali 2026
+        <svg class="tag-diya" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2C12 2 8 7 8 11C8 13.2 9.8 15 12 15C14.2 15 16 13.2 16 11C16 7 12 2 12 2Z" fill="#ffc233"/>
+          <path d="M3 14C3 14 5 21 12 21C19 21 21 14 21 14C21 14 17 16.5 12 16.5C7 16.5 3 14 3 14Z" fill="#e28e00"/>
+        </svg>
+        Shubh Deepawali 2026
       </div>
+
       <h1>#HarRangMein<span>JECRC</span></h1>
+
+      <!-- Ornate Rangoli Divider -->
+      <div class="rangoli-divider">
+        <svg class="rangoli-svg" viewBox="0 0 220 18" fill="none">
+          <line x1="0" y1="9" x2="80" y2="9" stroke="#ffc233" stroke-width="0.8" opacity="0.6"/>
+          <circle cx="85" cy="9" r="2" fill="#ffc233"/>
+          <!-- Central Mandala Floret -->
+          <circle cx="110" cy="9" r="4.5" fill="none" stroke="#ffc233" stroke-width="1"/>
+          <circle cx="110" cy="9" r="2" fill="#ffc233"/>
+          <path d="M110 2 Q113 6 110 9 Q107 6 110 2 Z" fill="#ffc233"/>
+          <path d="M110 16 Q113 12 110 9 Q107 12 110 16 Z" fill="#ffc233"/>
+          <path d="M103 9 Q107 12 110 9 Q107 6 103 9 Z" fill="#ffc233"/>
+          <path d="M117 9 Q113 12 110 9 Q113 6 117 9 Z" fill="#ffc233"/>
+          <circle cx="135" cy="9" r="2" fill="#ffc233"/>
+          <line x1="140" y1="9" x2="220" y2="9" stroke="#ffc233" stroke-width="0.8" opacity="0.6"/>
+        </svg>
+      </div>
+
       <p class="festive-sub">Personalize your official festive Diwali card and spread the joy with your loved ones</p>
     </header>
 
-    <!-- Card Preview with Golden Frame -->
+    <!-- Card Preview with Golden Frame & Corner Arches -->
     <div class="card-frame">
+      <!-- Ornate Corner Flourishes -->
+      <svg class="corner-flourish corner-tl" viewBox="0 0 30 30" fill="none">
+        <path d="M3 27 V8 C3 5 5 3 8 3 H27" stroke="#ffc233" stroke-width="2"/>
+        <path d="M8 8 C12 8 16 12 16 16" stroke="#ffc233" stroke-width="1.2" opacity="0.8"/>
+        <circle cx="8" cy="8" r="2" fill="#ffc233"/>
+      </svg>
+      <svg class="corner-flourish corner-tr" viewBox="0 0 30 30" fill="none">
+        <path d="M3 27 V8 C3 5 5 3 8 3 H27" stroke="#ffc233" stroke-width="2"/>
+        <path d="M8 8 C12 8 16 12 16 16" stroke="#ffc233" stroke-width="1.2" opacity="0.8"/>
+        <circle cx="8" cy="8" r="2" fill="#ffc233"/>
+      </svg>
+      <svg class="corner-flourish corner-bl" viewBox="0 0 30 30" fill="none">
+        <path d="M3 27 V8 C3 5 5 3 8 3 H27" stroke="#ffc233" stroke-width="2"/>
+        <path d="M8 8 C12 8 16 12 16 16" stroke="#ffc233" stroke-width="1.2" opacity="0.8"/>
+        <circle cx="8" cy="8" r="2" fill="#ffc233"/>
+      </svg>
+      <svg class="corner-flourish corner-br" viewBox="0 0 30 30" fill="none">
+        <path d="M3 27 V8 C3 5 5 3 8 3 H27" stroke="#ffc233" stroke-width="2"/>
+        <path d="M8 8 C12 8 16 12 16 16" stroke="#ffc233" stroke-width="1.2" opacity="0.8"/>
+        <circle cx="8" cy="8" r="2" fill="#ffc233"/>
+      </svg>
+
       <div class="preview-container">
         <div class="diya-badge">
-          <span class="flame-flicker">🪔</span> Live Card
+          <!-- Animated Vector Diya -->
+          <svg viewBox="0 0 24 24" fill="none">
+            <g class="flame-anim">
+              <path d="M12 2C12 2 9 6.5 9 10C9 11.8 10.3 13 12 13C13.7 13 15 11.8 15 10C15 6.5 12 2 12 2Z" fill="#ffc233"/>
+              <ellipse cx="12" cy="9.5" rx="1.2" ry="2" fill="#ffffff" opacity="0.85"/>
+            </g>
+            <path d="M4 12.5C4 12.5 5.5 19 12 19C18.5 19 20 12.5 20 12.5C20 12.5 16.5 14.5 12 14.5C7.5 14.5 4 12.5 4 12.5Z" fill="#d48b0a"/>
+          </svg>
+          Live Card
         </div>
+
         <div class="loading-state" id="loadingState">
           <div class="spinner"></div>
-          <p style="font-size: 13px; color: #ffe699;">Illuminating Card Template...</p>
+          <p style="font-size: 13px; color: #ffeaa7;">Illuminating Card Template...</p>
         </div>
         <canvas id="cardCanvas"></canvas>
       </div>
     </div>
 
-    <!-- Inputs & Big Festive Download Button -->
+    <!-- Inputs & Clean Festive Download Button -->
     <div class="festive-form">
       <div class="input-field">
         <label for="nameInput">
-          <span>✨</span> Full Name
+          <svg class="label-icon" viewBox="0 0 24 24">
+            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+          </svg>
+          Full Name
         </label>
         <input type="text" id="nameInput" placeholder="Enter your full name" autocomplete="off" autofocus>
       </div>
 
       <div class="input-field">
         <label for="deptInput">
-          <span>🏛️</span> Department / Designation
+          <svg class="label-icon" viewBox="0 0 24 24">
+            <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM3.45 13.52L12 18.18l8.55-4.66-1.55-.84L12 16.32 4.99 12.5l-1.54 1.02z"/>
+          </svg>
+          Department / Designation
         </label>
         <input type="text" id="deptInput" placeholder="e.g. Computer Science & Engineering" autocomplete="off">
       </div>
 
       <button type="button" class="festive-btn" id="downloadBtn">
-        <span class="flame-flicker">🪔</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
         Download My Diwali Card
-        <span>✨</span>
       </button>
     </div>
 
-    <!-- Festive Diyas Row -->
-    <div class="diya-row">
-      <span class="flame-flicker">🪔</span>
-      <span>✨</span>
-      <span class="flame-flicker" style="animation-delay: 0.5s;">🪔</span>
-      <span>✨</span>
-      <span class="flame-flicker" style="animation-delay: 0.9s;">🪔</span>
+    <!-- Decorative Traditional Clay Diyas Row -->
+    <div class="diya-shelf">
+      <!-- Diya 1 -->
+      <svg class="shelf-diya" viewBox="0 0 44 32" fill="none">
+        <g class="flame-anim" style="animation-delay: 0.1s;">
+          <path d="M22 2C22 2 17 8.5 17 13.5C17 16.5 19.2 18.5 22 18.5C24.8 18.5 27 16.5 27 13.5C27 8.5 22 2 22 2Z" fill="url(#flameGrad)"/>
+          <ellipse cx="22" cy="13" rx="1.6" ry="3" fill="#ffffff" opacity="0.85"/>
+        </g>
+        <path d="M6 18C6 18 9 27 22 27C35 27 38 18 38 18C38 18 30 21 22 21C14 21 6 18 6 18Z" fill="#b85d19"/>
+        <ellipse cx="22" cy="19.5" rx="14" ry="2.2" fill="#7a2503" stroke="#ffc233" stroke-width="0.8"/>
+        <path d="M16 26.5C18 28 26 28 28 26.5" stroke="#ffc233" stroke-width="1.2" stroke-linecap="round"/>
+      </svg>
+
+      <!-- Center Diya (Slightly larger) -->
+      <svg class="shelf-diya" style="width: 52px; height: 38px;" viewBox="0 0 44 32" fill="none">
+        <g class="flame-anim" style="animation-delay: 0.5s;">
+          <path d="M22 1C22 1 16 8 16 13.5C16 17 18.8 19 22 19C25.2 19 28 17 28 13.5C28 8 22 1 22 1Z" fill="url(#flameGrad)"/>
+          <ellipse cx="22" cy="13" rx="2" ry="3.5" fill="#ffffff" opacity="0.9"/>
+        </g>
+        <path d="M5 18C5 18 8 28 22 28C36 28 39 18 39 18C39 18 31 21.5 22 21.5C13 21.5 5 18 5 18Z" fill="#c44512"/>
+        <ellipse cx="22" cy="19.5" rx="15" ry="2.5" fill="#6d1c00" stroke="#ffc233" stroke-width="1"/>
+        <path d="M15 27.5C17.5 29.2 26.5 29.2 29 27.5" stroke="#ffc233" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+
+      <!-- Diya 3 -->
+      <svg class="shelf-diya" viewBox="0 0 44 32" fill="none">
+        <g class="flame-anim" style="animation-delay: 0.9s;">
+          <path d="M22 2C22 2 17 8.5 17 13.5C17 16.5 19.2 18.5 22 18.5C24.8 18.5 27 16.5 27 13.5C27 8.5 22 2 22 2Z" fill="url(#flameGrad)"/>
+          <ellipse cx="22" cy="13" rx="1.6" ry="3" fill="#ffffff" opacity="0.85"/>
+        </g>
+        <path d="M6 18C6 18 9 27 22 27C35 27 38 18 38 18C38 18 30 21 22 21C14 21 6 18 6 18Z" fill="#b85d19"/>
+        <ellipse cx="22" cy="19.5" rx="14" ry="2.2" fill="#7a2503" stroke="#ffc233" stroke-width="0.8"/>
+        <path d="M16 26.5C18 28 26 28 28 26.5" stroke="#ffc233" stroke-width="1.2" stroke-linecap="round"/>
+      </svg>
     </div>
 
+    <!-- Reusable SVG Gradients Definition -->
+    <svg width="0" height="0" style="position:absolute;">
+      <defs>
+        <linearGradient id="flameGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#ffffff"/>
+          <stop offset="25%" stop-color="#ffe600"/>
+          <stop offset="65%" stop-color="#ff9900"/>
+          <stop offset="100%" stop-color="#ff3c00"/>
+        </linearGradient>
+      </defs>
+    </svg>
+
     <footer>
-      Wishing you joy, light & prosperity • <span>JECRC Foundation</span>
+      Wishing you joy, light and prosperity • <span>JECRC Foundation</span>
     </footer>
   </div>
 
   <!-- Mobile Save / Share Modal -->
   <div class="modal-overlay" id="saveModal">
     <div class="modal-card">
-      <div style="font-size:28px;">🪔 ✨ 🪔</div>
-      <h3>Happy Diwali!</h3>
-      <p style="font-size:12px; color:#ffd778; margin-top:-6px;">Your personalized card is ready</p>
+      <svg width="40" height="30" viewBox="0 0 44 32" fill="none">
+        <path d="M22 1C22 1 16 8 16 13.5C16 17 18.8 19 22 19C25.2 19 28 17 28 13.5C28 8 22 1 22 1Z" fill="url(#flameGrad)"/>
+        <ellipse cx="22" cy="13" rx="2" ry="3.5" fill="#ffffff" opacity="0.9"/>
+        <path d="M5 18C5 18 8 28 22 28C36 28 39 18 39 18C39 18 31 21.5 22 21.5C13 21.5 5 18 5 18Z" fill="#c44512"/>
+      </svg>
+      <h3>Happy Diwali</h3>
+      <p style="font-size:12px; color:#ffeaa7; margin-top:-6px;">Your personalized card is ready</p>
       <img id="modalImg" alt="Personalized Diwali Card">
-      <p id="modalTip"><strong>On iPhone/Android:</strong> Tap & hold the image to <strong>Save to Photos</strong>, or tap Share below:</p>
+      <p id="modalTip"><strong>On iPhone and Android:</strong> Tap and hold the card above to <strong>Save to Photos</strong>, or tap Share below:</p>
       <div class="modal-btns">
-        <button type="button" class="btn-share" id="modalShareBtn">📤 Share Card on WhatsApp / Social</button>
+        <button type="button" class="btn-share" id="modalShareBtn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="18" cy="5" r="3"></circle>
+            <circle cx="6" cy="12" r="3"></circle>
+            <circle cx="18" cy="19" r="3"></circle>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+          </svg>
+          Share Card on WhatsApp / Social
+        </button>
         <button type="button" class="btn-close" id="modalCloseBtn">Close</button>
       </div>
     </div>
@@ -588,7 +803,7 @@
         loadingState.innerHTML = `
           <p style="color:#ff8787; font-size:13px; margin-bottom:10px;">Select template image to begin:</p>
           <label style="background:#ffc233; color:#012217; padding:10px 18px; border-radius:10px; font-size:13px; font-weight:700; cursor:pointer;">
-            📁 Select template.png
+            Select template.png
             <input type="file" id="fallbackFile" accept="image/*" style="display:none;">
           </label>
         `;
@@ -673,7 +888,7 @@
 
       const rawName = (nameInput.value || '').trim();
       if (!rawName) {
-        alert('🪔 Please enter your name to personalize the card!');
+        alert('Please enter your name to personalize the card!');
         nameInput.focus();
         return;
       }
@@ -696,9 +911,12 @@
         canvas.toBlob((blob) => {
           downloadBtn.disabled = false;
           downloadBtn.innerHTML = `
-            <span class="flame-flicker">🪔</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
             Download My Diwali Card
-            <span>✨</span>
           `;
 
           if (blob) {
@@ -751,9 +969,12 @@
       } finally {
         downloadBtn.disabled = false;
         downloadBtn.innerHTML = `
-          <span class="flame-flicker">🪔</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
           Download My Diwali Card
-          <span>✨</span>
         `;
       }
     }
@@ -769,7 +990,7 @@
             if (navigator.canShare({ files: [file] })) {
               await navigator.share({
                 title: '#HarRangMeinJECRC Diwali Card',
-                text: 'Wishing you a very Happy Diwali from JECRC! ✨🪔',
+                text: 'Wishing you a very Happy Diwali from JECRC!',
                 files: [file]
               });
               return;
@@ -816,7 +1037,7 @@
             alive = true;
             p.x += p.vx;
             p.y += p.vy;
-            p.vy += 0.3; // gravity
+            p.vy += 0.3;
             p.alpha -= p.decay;
 
             confettiCtx.save();
