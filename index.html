@@ -752,10 +752,10 @@
   </div>
 
   <script>
-    const CANVAS_DIM = 3919;
-    const CENTER_X = 1960;
-    const NAME_Y = 2715;
-    const DEPT_Y = 2825;
+    const CANVAS_DIM = 1254;
+    const CENTER_X = 627;
+    const NAME_Y = 856;
+    const DEPT_Y = 894;
     const COLOR_CODE = '#013b2d';
 
     const canvas = document.getElementById('cardCanvas');
@@ -782,8 +782,8 @@
     // Load Montserrat & template
     async function start() {
       try {
-        await document.fonts.load('600 88px Montserrat');
-        await document.fonts.load('400 62px Montserrat');
+        await document.fonts.load('600 28px Montserrat');
+        await document.fonts.load('400 20px Montserrat');
         await document.fonts.ready;
       } catch (e) {
         console.warn('Font load info:', e);
@@ -803,7 +803,7 @@
         loadingState.innerHTML = `
           <p style="color:#ff8787; font-size:13px; margin-bottom:10px;">Select template image to begin:</p>
           <label style="background:#ffc233; color:#012217; padding:10px 18px; border-radius:10px; font-size:13px; font-weight:700; cursor:pointer;">
-            Select template.png
+            Select template.jpg
             <input type="file" id="fallbackFile" accept="image/*" style="display:none;">
           </label>
         `;
@@ -822,7 +822,7 @@
         }
       };
 
-      templateImg.src = 'template.png';
+      templateImg.src = 'template.jpg';
     }
 
     // Render personalizations
@@ -842,36 +842,36 @@
       // 1. Name: Montserrat SemiBold, #013b2d
       if (name) {
         ctx.fillStyle = COLOR_CODE;
-        let nameFontSize = 88;
+        let nameFontSize = 28;
         ctx.font = `600 ${nameFontSize}px 'Montserrat', sans-serif`;
         let nameWidth = ctx.measureText(name).width;
-        while (nameWidth > 2400 && nameFontSize > 44) {
-          nameFontSize -= 2;
+        while (nameWidth > 760 && nameFontSize > 16) {
+          nameFontSize -= 1;
           ctx.font = `600 ${nameFontSize}px 'Montserrat', sans-serif`;
           nameWidth = ctx.measureText(name).width;
         }
         ctx.fillText(name, CENTER_X, NAME_Y);
       } else {
         ctx.fillStyle = 'rgba(1, 59, 45, 0.3)';
-        ctx.font = `600 88px 'Montserrat', sans-serif`;
+        ctx.font = `600 28px 'Montserrat', sans-serif`;
         ctx.fillText('Your Name Here', CENTER_X, NAME_Y);
       }
 
       // 2. Department: Montserrat Regular, #013b2d
       if (dept) {
         ctx.fillStyle = COLOR_CODE;
-        let deptFontSize = 62;
+        let deptFontSize = 20;
         ctx.font = `400 ${deptFontSize}px 'Montserrat', sans-serif`;
         let deptWidth = ctx.measureText(dept).width;
-        while (deptWidth > 2600 && deptFontSize > 34) {
-          deptFontSize -= 2;
+        while (deptWidth > 820 && deptFontSize > 13) {
+          deptFontSize -= 1;
           ctx.font = `400 ${deptFontSize}px 'Montserrat', sans-serif`;
           deptWidth = ctx.measureText(dept).width;
         }
         ctx.fillText(dept, CENTER_X, DEPT_Y);
       } else {
         ctx.fillStyle = 'rgba(1, 59, 45, 0.3)';
-        ctx.font = `400 62px 'Montserrat', sans-serif`;
+        ctx.font = `400 20px 'Montserrat', sans-serif`;
         ctx.fillText('Your Department Here', CENTER_X, DEPT_Y);
       }
     }

@@ -9,7 +9,7 @@ A lightweight, high-performance web tool for the JECRC community to generate per
 ```
 HarRangMeinJECRC-card/
 ├── index.html        # Single-page interactive web application
-├── template.png      # Base Diwali card template (3919 × 3919 high-res)
+├── template.jpg      # Base Diwali card template (1254 × 1254 web-optimized)
 └── README.md         # Deployment & hosting guide
 ```
 
