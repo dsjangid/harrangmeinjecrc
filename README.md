@@ -75,7 +75,7 @@ May the auspicious festival of lights bring prosperity, joy, and endless opportu
 
 As we celebrate the unity and spirit of our community this Diwali, we invite each of you to create your official personalized JECRC Diwali greeting card:
 
-👉 Click here to generate your card: https://YOUR_GITHUB_USERNAME.github.io/har-rang-mein-jecrc/
+👉 Click here to generate your card: https://dsjangid.github.io/harrangmeinjecrc/
 
 Simply enter your Name and Department/Designation, and click "Download High-Res PNG" to save your customized card. Share it across WhatsApp, LinkedIn, and Instagram with the hashtag #HarRangMeinJECRC!
 
