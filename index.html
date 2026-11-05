@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>🪔 #HarRangMeinJECRC | Shubh Deepawali</title>
+
+  <!-- Google Fonts: Montserrat & Great Vibes for Festive Diwali Accents -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    :root {
+      --gold-primary: #ffc233;
+      --gold-deep: #d48b0a;
+      --gold-glow: rgba(255, 194, 51, 0.45);
+      --diwali-red: #c92a2a;
+      --emerald-dark: #02150f;
+      --emerald-surface: rgba(7, 33, 23, 0.88);
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: radial-gradient(circle at 50% 0%, #153e2e 0%, #061912 45%, #020b08 100%);
+      color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 16px 14px 44px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Ambient Festive Lights (Toran & Diya Glows) */
+    .diya-glow-left {
+      position: fixed;
+      top: -50px;
+      left: -80px;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle, rgba(255, 180, 0, 0.25) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .diwali-sparkle-bg {
+      position: fixed;
+      inset: 0;
+      background-image: 
+        radial-gradient(2px 2px at 20px 30px, #ffd778, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 90px 140px, #ffb347, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 160px 70px, #ffe699, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 260px 210px, #ffc83b, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 320px 110px, #ffd778, rgba(0,0,0,0));
+      background-repeat: repeat;
+      background-size: 350px 350px;
+      opacity: 0.35;
+      pointer-events: none;
+      z-index: 0;
+      animation: floatSparkles 20s linear infinite;
+    }
+
+    @keyframes floatSparkles {
+      from { transform: translateY(0); }
+      to { transform: translateY(-350px); }
+    }
+
+    .app-card {
+      width: 100%;
+      max-width: 440px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Traditional Toran Garland at Top */
+    .toran-garland {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      font-size: 16px;
+      opacity: 0.9;
+      margin-bottom: 2px;
+      filter: drop-shadow(0 2px 8px rgba(255, 194, 51, 0.6));
+    }
+
+    /* Festive Header */
+    header {
+      text-align: center;
+      position: relative;
+    }
+
+    .shubh-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(90deg, rgba(212, 139, 10, 0.15), rgba(255, 194, 51, 0.25), rgba(212, 139, 10, 0.15));
+      border: 1px solid var(--gold-primary);
+      color: #ffe699;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      box-shadow: 0 0 16px rgba(255, 194, 51, 0.3);
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+      color: #ffffff;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+    }
+
+    h1 span {
+      background: linear-gradient(135deg, #ffe28a 0%, #ffc233 50%, #f39c12 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 8px rgba(255, 194, 51, 0.5));
+    }
+
+    p.festive-sub {
+      font-size: 12px;
+      color: #d1ded7;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* Card Frame with Ornate Golden Border & Corner Diya */
+    .card-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 18px;
+      padding: 3px;
+      background: linear-gradient(135deg, #ffd778 0%, #b87c0a 50%, #ffeaa7 100%);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7), 0 0 25px rgba(255, 194, 51, 0.25);
+    }
+
+    .preview-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+      overflow: hidden;
+      background: #020906;
+    }
+
+    #cardCanvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+    }
+
+    /* Diya badge */
+    .diya-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(3, 23, 16, 0.85);
+      border: 1px solid var(--gold-primary);
+      color: #ffe699;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    .flame-flicker {
+      display: inline-block;
+      animation: flicker 1.4s ease-in-out infinite alternate;
+    }
+
+    @keyframes flicker {
+      0% { transform: scale(1) rotate(-2deg); opacity: 0.9; }
+      100% { transform: scale(1.18) rotate(3deg); opacity: 1; filter: drop-shadow(0 0 6px #ffb300); }
+    }
+
+    .loading-state {
+      position: absolute;
+      inset: 0;
+      background: #04140d;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      z-index: 5;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .spinner {
+      width: 36px;
+      height: 36px;
+      border: 3.5px solid rgba(255, 194, 51, 0.2);
+      border-top-color: var(--gold-primary);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Festive Form Box */
+    .festive-form {
+      background: var(--emerald-surface);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1.5px solid rgba(255, 194, 51, 0.35);
+      border-radius: 18px;
+      padding: 18px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 194, 51, 0.05);
+    }
+
+    .input-field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .input-field label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #ffe699;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .input-field input {
+      width: 100%;
+      background: rgba(2, 14, 9, 0.92);
+      border: 1.5px solid rgba(255, 194, 51, 0.35);
+      border-radius: 12px;
+      padding: 14px 15px;
+      font-size: 15px;
+      font-family: 'Montserrat', sans-serif;
+      color: #ffffff;
+      outline: none;
+      transition: all 0.25s ease;
+    }
+
+    .input-field input:focus {
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 0 3px var(--gold-glow);
+      background: rgba(2, 18, 12, 0.98);
+    }
+
+    .input-field input::placeholder {
+      color: #5d7e71;
+      font-size: 14px;
+    }
+
+    /* Big Glowing Festive Download Button */
+    .festive-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #ffd359 0%, #ffb619 40%, #e28e00 100%);
+      color: #012217;
+      border: none;
+      border-radius: 14px;
+      padding: 16px 20px;
+      font-size: 16px;
+      font-weight: 800;
+      font-family: 'Montserrat', sans-serif;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 8px 24px rgba(226, 142, 0, 0.45), 0 0 14px rgba(255, 211, 89, 0.3);
+      margin-top: 4px;
+      transition: all 0.15s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .festive-btn:after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(60deg, transparent 40%, rgba(255,255,255,0.4) 50%, transparent 60%);
+      transform: translateX(-100%);
+      transition: transform 0.6s ease;
+    }
+
+    .festive-btn:hover:after {
+      transform: translateX(100%);
+    }
+
+    .festive-btn:active {
+      transform: scale(0.98);
+      box-shadow: 0 4px 12px rgba(226, 142, 0, 0.4);
+    }
+
+    .festive-btn:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+
+    /* Floating Diya Bottom Accents */
+    .diya-row {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 6px;
+      font-size: 20px;
+      filter: drop-shadow(0 2px 6px rgba(255, 194, 51, 0.5));
+    }
+
+    footer {
+      text-align: center;
+      font-size: 11px;
+      color: #8daea1;
+      margin-top: 8px;
+    }
+
+    footer span {
+      color: var(--gold-primary);
+      font-weight: 600;
+    }
+
+    /* Mobile Save / Share Modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.88);
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 999;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .modal-card {
+      background: #072217;
+      border: 1.5px solid var(--gold-primary);
+      border-radius: 20px;
+      max-width: 380px;
+      width: 100%;
+      padding: 22px 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 30px rgba(255, 194, 51, 0.35);
+      animation: popIn 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .modal-card img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 12px;
+      object-fit: contain;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+      border: 1px solid rgba(255, 194, 51, 0.3);
+    }
+
+    .modal-card h3 {
+      font-size: 18px;
+      color: #ffe699;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .modal-card p {
+      font-size: 13px;
+      color: #c0d8ce;
+      line-height: 1.4;
+    }
+
+    .modal-btns {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .btn-share {
+      width: 100%;
+      background: linear-gradient(135deg, #ffd359, #e28e00);
+      color: #012217;
+      border: none;
+      border-radius: 12px;
+      padding: 13px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .btn-close {
+      width: 100%;
+      background: transparent;
+      color: #9ebdb0;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 12px;
+      padding: 11px;
+      font-size: 13px;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    /* Confetti Canvas for Festive Celebration */
+    #confettiCanvas {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Festive Ambient Backdrops -->
+  <div class="diwali-sparkle-bg"></div>
+  <div class="diya-glow-left"></div>
+  <canvas id="confettiCanvas"></canvas>
+
+  <div class="app-card">
+    <div class="toran-garland">
+      ✨ 🪔 ✨ 🪔 ✨
+    </div>
+
+    <header>
+      <div class="shubh-tag">
+        <span>🪔</span> Shubh Deepawali 2026
+      </div>
+      <h1>#HarRangMein<span>JECRC</span></h1>
+      <p class="festive-sub">Personalize your official festive Diwali card and spread the joy with your loved ones</p>
+    </header>
+
+    <!-- Card Preview with Golden Frame -->
+    <div class="card-frame">
+      <div class="preview-container">
+        <div class="diya-badge">
+          <span class="flame-flicker">🪔</span> Live Card
+        </div>
+        <div class="loading-state" id="loadingState">
+          <div class="spinner"></div>
+          <p style="font-size: 13px; color: #ffe699;">Illuminating Card Template...</p>
+        </div>
+        <canvas id="cardCanvas"></canvas>
+      </div>
+    </div>
+
+    <!-- Inputs & Big Festive Download Button -->
+    <div class="festive-form">
+      <div class="input-field">
+        <label for="nameInput">
+          <span>✨</span> Full Name
+        </label>
+        <input type="text" id="nameInput" placeholder="Enter your full name" autocomplete="off" autofocus>
+      </div>
+
+      <div class="input-field">
+        <label for="deptInput">
+          <span>🏛️</span> Department / Designation
+        </label>
+        <input type="text" id="deptInput" placeholder="e.g. Computer Science & Engineering" autocomplete="off">
+      </div>
+
+      <button type="button" class="festive-btn" id="downloadBtn">
+        <span class="flame-flicker">🪔</span>
+        Download My Diwali Card
+        <span>✨</span>
+      </button>
+    </div>
+
+    <!-- Festive Diyas Row -->
+    <div class="diya-row">
+      <span class="flame-flicker">🪔</span>
+      <span>✨</span>
+      <span class="flame-flicker" style="animation-delay: 0.5s;">🪔</span>
+      <span>✨</span>
+      <span class="flame-flicker" style="animation-delay: 0.9s;">🪔</span>
+    </div>
+
+    <footer>
+      Wishing you joy, light & prosperity • <span>JECRC Foundation</span>
+    </footer>
+  </div>
+
+  <!-- Mobile Save / Share Modal -->
+  <div class="modal-overlay" id="saveModal">
+    <div class="modal-card">
+      <div style="font-size:28px;">🪔 ✨ 🪔</div>
+      <h3>Happy Diwali!</h3>
+      <p style="font-size:12px; color:#ffd778; margin-top:-6px;">Your personalized card is ready</p>
+      <img id="modalImg" alt="Personalized Diwali Card">
+      <p id="modalTip"><strong>On iPhone/Android:</strong> Tap & hold the image to <strong>Save to Photos</strong>, or tap Share below:</p>
+      <div class="modal-btns">
+        <button type="button" class="btn-share" id="modalShareBtn">📤 Share Card on WhatsApp / Social</button>
+        <button type="button" class="btn-close" id="modalCloseBtn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const CANVAS_DIM = 3919;
+    const CENTER_X = 1960;
+    const NAME_Y = 2715;
+    const DEPT_Y = 2825;
+    const COLOR_CODE = '#013b2d';
+
+    const canvas = document.getElementById('cardCanvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = CANVAS_DIM;
+    canvas.height = CANVAS_DIM;
+
+    const nameInput = document.getElementById('nameInput');
+    const deptInput = document.getElementById('deptInput');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const loadingState = document.getElementById('loadingState');
+    const saveModal = document.getElementById('saveModal');
+    const modalImg = document.getElementById('modalImg');
+    const modalShareBtn = document.getElementById('modalShareBtn');
+    const modalCloseBtn = document.getElementById('modalCloseBtn');
+    const confettiCanvas = document.getElementById('confettiCanvas');
+    const confettiCtx = confettiCanvas.getContext('2d');
+
+    const templateImg = new Image();
+    let isReady = false;
+    let currentBlob = null;
+    let currentDataUrl = null;
+
+    // Load Montserrat & template
+    async function start() {
+      try {
+        await document.fonts.load('600 88px Montserrat');
+        await document.fonts.load('400 62px Montserrat');
+        await document.fonts.ready;
+      } catch (e) {
+        console.warn('Font load info:', e);
+      }
+
+      if (window.location.protocol !== 'file:') {
+        templateImg.crossOrigin = 'anonymous';
+      }
+
+      templateImg.onload = () => {
+        isReady = true;
+        loadingState.style.display = 'none';
+        draw();
+      };
+
+      templateImg.onerror = () => {
+        loadingState.innerHTML = `
+          <p style="color:#ff8787; font-size:13px; margin-bottom:10px;">Select template image to begin:</p>
+          <label style="background:#ffc233; color:#012217; padding:10px 18px; border-radius:10px; font-size:13px; font-weight:700; cursor:pointer;">
+            📁 Select template.png
+            <input type="file" id="fallbackFile" accept="image/*" style="display:none;">
+          </label>
+        `;
+        const picker = document.getElementById('fallbackFile');
+        if (picker) {
+          picker.onchange = (e) => {
+            const f = e.target.files && e.target.files[0];
+            if (f) {
+              const r = new FileReader();
+              r.onload = (ev) => {
+                templateImg.src = ev.target.result;
+              };
+              r.readAsDataURL(f);
+            }
+          };
+        }
+      };
+
+      templateImg.src = 'template.png';
+    }
+
+    // Render personalizations
+    function draw() {
+      if (!isReady) return;
+
+      // Base Diwali Card
+      ctx.clearRect(0, 0, CANVAS_DIM, CANVAS_DIM);
+      ctx.drawImage(templateImg, 0, 0, CANVAS_DIM, CANVAS_DIM);
+
+      const name = (nameInput.value || '').trim();
+      const dept = (deptInput.value || '').trim();
+
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+
+      // 1. Name: Montserrat SemiBold, #013b2d
+      if (name) {
+        ctx.fillStyle = COLOR_CODE;
+        let nameFontSize = 88;
+        ctx.font = `600 ${nameFontSize}px 'Montserrat', sans-serif`;
+        let nameWidth = ctx.measureText(name).width;
+        while (nameWidth > 2400 && nameFontSize > 44) {
+          nameFontSize -= 2;
+          ctx.font = `600 ${nameFontSize}px 'Montserrat', sans-serif`;
+          nameWidth = ctx.measureText(name).width;
+        }
+        ctx.fillText(name, CENTER_X, NAME_Y);
+      } else {
+        ctx.fillStyle = 'rgba(1, 59, 45, 0.3)';
+        ctx.font = `600 88px 'Montserrat', sans-serif`;
+        ctx.fillText('Your Name Here', CENTER_X, NAME_Y);
+      }
+
+      // 2. Department: Montserrat Regular, #013b2d
+      if (dept) {
+        ctx.fillStyle = COLOR_CODE;
+        let deptFontSize = 62;
+        ctx.font = `400 ${deptFontSize}px 'Montserrat', sans-serif`;
+        let deptWidth = ctx.measureText(dept).width;
+        while (deptWidth > 2600 && deptFontSize > 34) {
+          deptFontSize -= 2;
+          ctx.font = `400 ${deptFontSize}px 'Montserrat', sans-serif`;
+          deptWidth = ctx.measureText(dept).width;
+        }
+        ctx.fillText(dept, CENTER_X, DEPT_Y);
+      } else {
+        ctx.fillStyle = 'rgba(1, 59, 45, 0.3)';
+        ctx.font = `400 62px 'Montserrat', sans-serif`;
+        ctx.fillText('Your Department Here', CENTER_X, DEPT_Y);
+      }
+    }
+
+    nameInput.addEventListener('input', draw);
+    deptInput.addEventListener('input', draw);
+
+    // Download & Celebration Trigger
+    downloadBtn.addEventListener('click', () => {
+      if (!isReady) {
+        alert('Please wait for the card to load.');
+        return;
+      }
+
+      const rawName = (nameInput.value || '').trim();
+      if (!rawName) {
+        alert('🪔 Please enter your name to personalize the card!');
+        nameInput.focus();
+        return;
+      }
+
+      // Fire celebratory sparkles
+      fireDiwaliSparkles();
+
+      draw();
+
+      const safeName = rawName.replace(/[^a-zA-Z0-9_-]/g, '_');
+      const fileName = `HarRangMeinJECRC_${safeName}.png`;
+
+      downloadBtn.disabled = true;
+      downloadBtn.innerHTML = `
+        <span class="spinner" style="width:18px; height:18px; border-width:2px; display:inline-block; vertical-align:middle;"></span>
+        Preparing Card...
+      `;
+
+      try {
+        canvas.toBlob((blob) => {
+          downloadBtn.disabled = false;
+          downloadBtn.innerHTML = `
+            <span class="flame-flicker">🪔</span>
+            Download My Diwali Card
+            <span>✨</span>
+          `;
+
+          if (blob) {
+            currentBlob = blob;
+            const blobUrl = URL.createObjectURL(blob);
+            currentDataUrl = blobUrl;
+
+            // Direct download link
+            const a = document.createElement('a');
+            a.href = blobUrl;
+            a.download = fileName;
+            document.body.appendChild(a);
+            a.click();
+
+            setTimeout(() => {
+              if (document.body.contains(a)) document.body.removeChild(a);
+            }, 3000);
+
+            // If mobile, also display the modal
+            if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+              showModal(blobUrl, fileName);
+            }
+          } else {
+            fallbackDataUrl(fileName);
+          }
+        }, 'image/png');
+      } catch (err) {
+        console.warn('toBlob caught error, using DataURL fallback:', err);
+        fallbackDataUrl(fileName);
+      }
+    });
+
+    function fallbackDataUrl(fileName) {
+      try {
+        const dataUrl = canvas.toDataURL('image/png');
+        currentDataUrl = dataUrl;
+
+        const a = document.createElement('a');
+        a.href = dataUrl;
+        a.download = fileName;
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(() => {
+          if (document.body.contains(a)) document.body.removeChild(a);
+        }, 3000);
+
+        showModal(dataUrl, fileName);
+      } catch (err) {
+        alert('Could not export due to browser local sandbox. Please host on GitHub Pages or run on a local web server.');
+      } finally {
+        downloadBtn.disabled = false;
+        downloadBtn.innerHTML = `
+          <span class="flame-flicker">🪔</span>
+          Download My Diwali Card
+          <span>✨</span>
+        `;
+      }
+    }
+
+    function showModal(url, fileName) {
+      modalImg.src = url;
+      saveModal.style.display = 'flex';
+
+      modalShareBtn.onclick = async () => {
+        try {
+          if (navigator.canShare && currentBlob) {
+            const file = new File([currentBlob], fileName, { type: 'image/png' });
+            if (navigator.canShare({ files: [file] })) {
+              await navigator.share({
+                title: '#HarRangMeinJECRC Diwali Card',
+                text: 'Wishing you a very Happy Diwali from JECRC! ✨🪔',
+                files: [file]
+              });
+              return;
+            }
+          }
+        } catch (e) {
+          console.log('Share canceled');
+        }
+        alert('Tap and hold the card above, then choose "Save to Photos"!');
+      };
+
+      modalCloseBtn.onclick = () => {
+        saveModal.style.display = 'none';
+      };
+    }
+
+    // Diwali Golden Sparkles Animation on Download
+    function fireDiwaliSparkles() {
+      confettiCanvas.width = window.innerWidth;
+      confettiCanvas.height = window.innerHeight;
+
+      const particles = [];
+      const colors = ['#ffd700', '#ffae19', '#ff6b00', '#ffffff', '#ffeb99'];
+
+      for (let i = 0; i < 75; i++) {
+        particles.push({
+          x: window.innerWidth / 2,
+          y: window.innerHeight * 0.6,
+          vx: (Math.random() - 0.5) * 12,
+          vy: (Math.random() - 0.8) * 14,
+          size: Math.random() * 4 + 2,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          alpha: 1,
+          decay: Math.random() * 0.02 + 0.015
+        });
+      }
+
+      function animate() {
+        confettiCtx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+        let alive = false;
+
+        for (let p of particles) {
+          if (p.alpha > 0) {
+            alive = true;
+            p.x += p.vx;
+            p.y += p.vy;
+            p.vy += 0.3; // gravity
+            p.alpha -= p.decay;
+
+            confettiCtx.save();
+            confettiCtx.globalAlpha = Math.max(0, p.alpha);
+            confettiCtx.fillStyle = p.color;
+            confettiCtx.beginPath();
+            confettiCtx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+            confettiCtx.fill();
+            confettiCtx.restore();
+          }
+        }
+
+        if (alive) {
+          requestAnimationFrame(animate);
+        } else {
+          confettiCtx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+        }
+      }
+      animate();
+    }
+
+    window.addEventListener('DOMContentLoaded', start);
+  </script>
+</body>
+</html>
